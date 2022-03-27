@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import Axios from "axios";
 // import emailjs from '@emailjs/browser';
 import "./contact.css";
@@ -6,6 +6,7 @@ import Instagram from "../../../img/instagram.png";
 import Phone from "../../../img/phone.png";
 import Email from "../../../img/email.png";
 // import Admin from '../../admin/Admin';
+import api from '../../../services/api';
 
 const Contact = () => {
   
@@ -30,7 +31,7 @@ const Contact = () => {
   }; */
 
    const handleClick = () => {
-      Axios.post("https://arabela-backend.herokuapp.com/user", {
+      api.post("user", {
        name: values.user_name,
        email: values.user_email,
        wpp: values.user_wpp,
