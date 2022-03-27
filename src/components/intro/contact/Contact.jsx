@@ -1,13 +1,16 @@
-import React, { useRef } from 'react';
-import emailjs from '@emailjs/browser';
+import React, { useRef, useState } from 'react';
+import Axios from "axios";
+// import emailjs from '@emailjs/browser';
 import "./contact.css";
 import Instagram from "../../../img/instagram.png";
 import Phone from "../../../img/phone.png";
 import Email from "../../../img/email.png";
-import Admin from '../../admin/Admin';
+// import Admin from '../../admin/Admin';
 
 const Contact = () => {
-  const formRef = useRef();
+  
+  const [values, setValues] = useState();
+  /* const formRef = useRef();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,7 +27,25 @@ const Contact = () => {
       });
     const forms = document.querySelector('form');
     forms.reset();
-  };
+  }; */
+
+   const handleClick = () => {
+      Axios.post("https://arabela-backend.herokuapp.com/user", {
+       name: values.user_name,
+       email: values.user_email,
+       wpp: values.user_wpp,
+       music: values.message,
+     }).then((response) => {
+       console.log(response);
+     })
+  }
+
+  const handleChange = (value) => {
+    setValues((prevValue) => ({
+      ...prevValue,
+      [value.target.name]: value.target.value,
+    }));
+  }
 
   return (
     <div>
@@ -62,24 +83,27 @@ const Contact = () => {
           </div>
           <div className="c-right">
             <h1>Escolha sua Música e/ou Artista!</h1>
-            <form ref={formRef} onSubmit={handleSubmit}>
+            <form /* ref={formRef} onSubmit={handleSubmit} */>
               <input
                 type="text"
                 placeholder='Nome'
                 name="user_name"
+                onChange={ handleChange }
                 required
               />
               <input
                 type="text"
                 placeholder='Email'
                 name="user_email"
+                onChange={ handleChange }
                 required
               />
 
               <input
-                type="number"
+                type="text"
                 placeholder='Wpp'
                 name="user_wpp"
+                onChange={ handleChange }
                 required
               />
               <textarea
@@ -88,10 +112,16 @@ const Contact = () => {
                 cols="30"
                 rows="5"
                 placeholder='Música e Artista'
+                onChange={ handleChange }
                 required
               >
               </textarea>
-              <button type='submit'>Enviar</button>
+              <button
+               type=''
+               onClick={ () => handleClick() }
+               >
+                 Enviar
+                 </button>
             </form>
           </div>
         </div>
