@@ -96,7 +96,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      <Admin />
     </div>
   );
 };
