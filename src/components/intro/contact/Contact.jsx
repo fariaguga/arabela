@@ -6,7 +6,7 @@ import Instagram from "../../../img/instagram.png";
 import Phone from "../../../img/phone.png";
 import Email from "../../../img/email.png";
 // import Admin from '../../admin/Admin';
-import api from '../../../services/api';
+// import api from '../../../services/api';
 
 const Contact = () => {
   
@@ -31,7 +31,7 @@ const Contact = () => {
   }; */
 
    const handleClick = () => {
-      api.post("user", {
+      Axios.post("https://arabela-backend.herokuapp.com/user", {
        name: values.user_name,
        email: values.user_email,
        wpp: values.user_wpp,
@@ -84,7 +84,6 @@ const Contact = () => {
           </div>
           <div className="c-right">
             <h1>Escolha sua Música e/ou Artista!</h1>
-            <form /* ref={formRef} onSubmit={handleSubmit} */>
               <input
                 type="text"
                 placeholder='Nome'
@@ -123,7 +122,6 @@ const Contact = () => {
                >
                  Enviar
                  </button>
-            </form>
           </div>
         </div>
       </div>
