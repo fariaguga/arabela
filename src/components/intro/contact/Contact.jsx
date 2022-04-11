@@ -39,6 +39,8 @@ const Contact = () => {
      }).then((response) => {
        console.log(response);
      })
+     const forms = document.querySelector('form');
+     forms.reset();
   }
 
   const handleChange = (value) => {
@@ -49,6 +51,7 @@ const Contact = () => {
   }
 
   return (
+    <form>
     <div>
       <div className='c'>
         <div className="c-bg"></div>
@@ -126,6 +129,7 @@ const Contact = () => {
         </div>
       </div>
     </div>
+    </form>
   );
 };
 
