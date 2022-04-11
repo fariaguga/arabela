@@ -1,4 +1,4 @@
-# 📦 API ARABELA BANDA
+# 📦 API ARABELA BANDA - FRONTEND
 
 Criação de uma API utilizando React.js | Node.js | MySQL | Docker | Heroku 
 
