@@ -8,6 +8,7 @@ Repository Backend: https://github.com/fariaguga/arabela-backend
 
 ## 🛠️ Construído com
 
+* [ReactJs](https://reactjs.org/) - A JavaScript library for building user interfaces
 * [Sequelize](https://www.npmjs.com/package/sequelize) - Promise-based Node.js ORM for MySQL
 * [Express](https://expressjs.com/) - Web framework for Node.js
 * [Cors](https://www.npmjs.com/package/cors) - Package for providing a Connect/Expresss
